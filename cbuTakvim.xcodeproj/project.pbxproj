@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4181818A6B888E6ADBDAFA8E /* Pods_cbuTakvim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA91DB49DCA5EB1BBB777159 /* Pods_cbuTakvim.framework */; };
 		95B5B4A32A12543B00277887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B5B4A22A12543B00277887 /* AppDelegate.swift */; };
 		95B5B4A52A12543B00277887 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B5B4A42A12543B00277887 /* SceneDelegate.swift */; };
 		95B5B4A72A12543B00277887 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B5B4A62A12543B00277887 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 		95B5B4B72A125AF400277887 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B5B4B62A125AF400277887 /* RegisterViewController.swift */; };
 		95B5B4B92A125B1100277887 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B5B4B82A125B1100277887 /* LoginViewController.swift */; };
 		95B5B4BC2A125B6400277887 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B5B4BB2A125B6400277887 /* CalendarViewController.swift */; };
+		95B5B4C02A125EFA00277887 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95B5B4BF2A125EFA00277887 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,10 @@
 		95B5B4B62A125AF400277887 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		95B5B4B82A125B1100277887 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		95B5B4BB2A125B6400277887 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		95B5B4BF2A125EFA00277887 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9A96A5BCDF046646E1E84855 /* Pods-cbuTakvim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cbuTakvim.debug.xcconfig"; path = "Target Support Files/Pods-cbuTakvim/Pods-cbuTakvim.debug.xcconfig"; sourceTree = "<group>"; };
+		BA91DB49DCA5EB1BBB777159 /* Pods_cbuTakvim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cbuTakvim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCF99BDC3D12B5BCBD824BF2 /* Pods-cbuTakvim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cbuTakvim.release.xcconfig"; path = "Target Support Files/Pods-cbuTakvim/Pods-cbuTakvim.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +43,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4181818A6B888E6ADBDAFA8E /* Pods_cbuTakvim.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61004FEB7572B9C13A0C6BE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A96A5BCDF046646E1E84855 /* Pods-cbuTakvim.debug.xcconfig */,
+				CCF99BDC3D12B5BCBD824BF2 /* Pods-cbuTakvim.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		95B5B4962A12543B00277887 = {
 			isa = PBXGroup;
 			children = (
 				95B5B4A12A12543B00277887 /* cbuTakvim */,
 				95B5B4A02A12543B00277887 /* Products */,
+				61004FEB7572B9C13A0C6BE7 /* Pods */,
+				A49A782C2F74F955B51F6CED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,13 +81,12 @@
 		95B5B4A12A12543B00277887 /* cbuTakvim */ = {
 			isa = PBXGroup;
 			children = (
-				95B5B4A22A12543B00277887 /* AppDelegate.swift */,
-				95B5B4A42A12543B00277887 /* SceneDelegate.swift */,
+				95B5B4BE2A125DFA00277887 /* Delegates */,
 				95B5B4BA2A125B2400277887 /* Controllers */,
-				95B5B4A82A12543B00277887 /* Main.storyboard */,
+				95B5B4BD2A125DED00277887 /* Views */,
 				95B5B4AB2A12543C00277887 /* Assets.xcassets */,
-				95B5B4AD2A12543C00277887 /* LaunchScreen.storyboard */,
 				95B5B4B02A12543C00277887 /* Info.plist */,
+				95B5B4BF2A125EFA00277887 /* GoogleService-Info.plist */,
 			);
 			path = cbuTakvim;
 			sourceTree = "<group>";
@@ -84,6 +102,32 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		95B5B4BD2A125DED00277887 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95B5B4A82A12543B00277887 /* Main.storyboard */,
+				95B5B4AD2A12543C00277887 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		95B5B4BE2A125DFA00277887 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				95B5B4A22A12543B00277887 /* AppDelegate.swift */,
+				95B5B4A42A12543B00277887 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		A49A782C2F74F955B51F6CED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA91DB49DCA5EB1BBB777159 /* Pods_cbuTakvim.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95B5B4B32A12543C00277887 /* Build configuration list for PBXNativeTarget "cbuTakvim" */;
 			buildPhases = (
+				5AEA68A28BBCBC6E0A7CF0CA /* [CP] Check Pods Manifest.lock */,
 				95B5B49B2A12543B00277887 /* Sources */,
 				95B5B49C2A12543B00277887 /* Frameworks */,
 				95B5B49D2A12543B00277887 /* Resources */,
+				3F5C86D14ADE363668584F83 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,12 +189,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				95B5B4AF2A12543C00277887 /* LaunchScreen.storyboard in Resources */,
+				95B5B4C02A125EFA00277887 /* GoogleService-Info.plist in Resources */,
 				95B5B4AC2A12543C00277887 /* Assets.xcassets in Resources */,
 				95B5B4AA2A12543B00277887 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F5C86D14ADE363668584F83 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cbuTakvim/Pods-cbuTakvim-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cbuTakvim/Pods-cbuTakvim-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cbuTakvim/Pods-cbuTakvim-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AEA68A28BBCBC6E0A7CF0CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cbuTakvim-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		95B5B49B2A12543B00277887 /* Sources */ = {
@@ -302,6 +391,7 @@
 		};
 		95B5B4B42A12543C00277887 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A96A5BCDF046646E1E84855 /* Pods-cbuTakvim.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,11 +400,13 @@
 				DEVELOPMENT_TEAM = 6N97WYA79M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = cbuTakvim/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "CBU Takvim";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,6 +422,7 @@
 		};
 		95B5B4B52A12543C00277887 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCF99BDC3D12B5BCBD824BF2 /* Pods-cbuTakvim.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -338,11 +431,13 @@
 				DEVELOPMENT_TEAM = 6N97WYA79M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = cbuTakvim/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "CBU Takvim";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

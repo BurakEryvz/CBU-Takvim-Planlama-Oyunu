@@ -1,0 +1,6 @@
+framework module Pods_cbuTakvim {
+  umbrella header "Pods-cbuTakvim-umbrella.h"
+
+  export *
+  module * { export * }
+}
