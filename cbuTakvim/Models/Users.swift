@@ -8,14 +8,18 @@
 import Foundation
 
 
-struct User {
+struct Users {
     
-    var uID:String
-    var firstName:String
-    var lastName:String
+    let uID:String
+    let firstName:String
+    let lastName:String
     
     
-    
+    init(uID: String, firstName: String, lastName: String) {
+        self.uID = uID
+        self.firstName = firstName
+        self.lastName = lastName
+    }
     
     
 }

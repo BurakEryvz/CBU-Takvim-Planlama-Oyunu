@@ -51,13 +51,13 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mnT-X4-tH7">
-                                <rect key="frame" x="140" y="365" width="113.33333333333331" height="122.33333333333331"/>
+                                <rect key="frame" x="140" y="352" width="113.33333333333331" height="148.33333333333337"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cbu" translatesAutoresizingMaskIntoConstraints="NO" id="4Wc-Vc-qW5">
                                         <rect key="frame" x="15" y="0.0" width="83.333333333333329" height="83.333333333333329"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CBU Takvim" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAy-iC-4cJ">
-                                        <rect key="frame" x="0.0" y="98.333333333333314" width="113.33333333333333" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CBU Takvim" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAy-iC-4cJ" customClass="CLTypingLabel" customModule="CLTypingLabel">
+                                        <rect key="frame" x="0.0" y="98.333333333333314" width="113.33333333333333" height="50"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -76,6 +76,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ByM-hL-350"/>
+                    <connections>
+                        <outlet property="cbuTakvimLabel" destination="gAy-iC-4cJ" id="kFg-kj-VMj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,6 +144,9 @@
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="kaydolButtonPressed:" destination="0OK-uZ-zrw" eventType="touchUpInside" id="aYa-Ce-nIp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lz4-2z-5Mo"/>
@@ -157,6 +163,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="QeJ-Lo-rfy"/>
                     <connections>
+                        <outlet property="emailTxtField" destination="t0f-Q6-OF5" id="1go-LM-a21"/>
+                        <outlet property="isimTxtField" destination="UNI-1o-GNN" id="0Kd-GA-iMP"/>
+                        <outlet property="sifreTxtField" destination="KQ7-RC-T3R" id="dhM-ri-7ul"/>
+                        <outlet property="soyisimTxtField" destination="Eeq-Ja-oFU" id="izw-f0-o7o"/>
                         <segue destination="3i1-Is-zNu" kind="show" identifier="RegisterToCalendar" id="oof-Xi-Njo"/>
                     </connections>
                 </viewController>
@@ -186,7 +196,17 @@
                             <constraint firstItem="IJ5-dW-1ru" firstAttribute="centerX" secondItem="Eec-XT-2OV" secondAttribute="centerX" id="iWS-V0-9hG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qib-10-Yhb"/>
+                    <navigationItem key="navigationItem" id="qib-10-Yhb">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="zE7-iu-RBU">
+                            <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="logoutPressed:" destination="3i1-Is-zNu" id="59m-n7-iyO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="label" destination="IJ5-dW-1ru" id="Xzd-ZL-aSs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZn-fB-j3f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,6 +256,9 @@
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="girisYapButtonPressed:" destination="4XE-xx-j6i" eventType="touchUpInside" id="Ugt-Bu-5TH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8j6-1d-TAw"/>
@@ -252,6 +275,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="V4Y-CK-UeB"/>
                     <connections>
+                        <outlet property="emailTxtField" destination="N4V-wy-6gY" id="Myp-ee-EZA"/>
+                        <outlet property="sifreTxtField" destination="rzH-QL-4Yu" id="c9K-ok-dNr"/>
                         <segue destination="3i1-Is-zNu" kind="show" identifier="LoginToCalendar" id="wHU-kB-Cse"/>
                     </connections>
                 </viewController>
@@ -278,8 +303,11 @@
             <point key="canvasLocation" x="64.885496183206101" y="-34.507042253521128"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="gAy-iC-4cJ"/>
+    </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="oof-Xi-Njo"/>
+        <segue reference="wHU-kB-Cse"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cbu" width="83.333335876464844" height="83.333335876464844"/>

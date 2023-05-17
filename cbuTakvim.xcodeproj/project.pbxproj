@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4181818A6B888E6ADBDAFA8E /* Pods_cbuTakvim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA91DB49DCA5EB1BBB777159 /* Pods_cbuTakvim.framework */; };
+		95925B2B2A13BAE100B2A065 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95925B2A2A13BAE100B2A065 /* Users.swift */; };
 		95B5B4A32A12543B00277887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B5B4A22A12543B00277887 /* AppDelegate.swift */; };
 		95B5B4A52A12543B00277887 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B5B4A42A12543B00277887 /* SceneDelegate.swift */; };
 		95B5B4A72A12543B00277887 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B5B4A62A12543B00277887 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95925B2A2A13BAE100B2A065 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		95B5B49F2A12543B00277887 /* cbuTakvim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cbuTakvim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B5B4A22A12543B00277887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95B5B4A42A12543B00277887 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +58,15 @@
 				9A96A5BCDF046646E1E84855 /* Pods-cbuTakvim.debug.xcconfig */,
 				CCF99BDC3D12B5BCBD824BF2 /* Pods-cbuTakvim.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		95925B292A13BAD100B2A065 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95925B2A2A13BAE100B2A065 /* Users.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		95B5B4962A12543B00277887 = {
@@ -81,6 +90,7 @@
 		95B5B4A12A12543B00277887 /* cbuTakvim */ = {
 			isa = PBXGroup;
 			children = (
+				95925B292A13BAD100B2A065 /* Models */,
 				95B5B4BE2A125DFA00277887 /* Delegates */,
 				95B5B4BA2A125B2400277887 /* Controllers */,
 				95B5B4BD2A125DED00277887 /* Views */,
@@ -246,6 +256,7 @@
 			files = (
 				95B5B4BC2A125B6400277887 /* CalendarViewController.swift in Sources */,
 				95B5B4A72A12543B00277887 /* ViewController.swift in Sources */,
+				95925B2B2A13BAE100B2A065 /* Users.swift in Sources */,
 				95B5B4A32A12543B00277887 /* AppDelegate.swift in Sources */,
 				95B5B4A52A12543B00277887 /* SceneDelegate.swift in Sources */,
 				95B5B4B92A125B1100277887 /* LoginViewController.swift in Sources */,

@@ -9,5 +9,6 @@ target 'cbuTakvim' do
 
 	pod 'FirebaseAuth'
 	pod 'FirebaseFirestore'	
+	pod 'CLTypingLabel'
 
 end

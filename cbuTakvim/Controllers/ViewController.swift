@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import CLTypingLabel
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var cbuTakvimLabel: CLTypingLabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        cbuTakvimLabel.text = "CBU Takvim"
     }
 
 
