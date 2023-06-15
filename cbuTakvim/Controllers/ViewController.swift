@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CLTypingLabel
+import CLTypingLabel //Kayan yazi olusturmak icin kullanilan Pod
 
 class ViewController: UIViewController {
 

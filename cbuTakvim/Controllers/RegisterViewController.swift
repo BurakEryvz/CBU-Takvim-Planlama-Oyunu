@@ -57,7 +57,7 @@ class RegisterViewController: UIViewController {
                             }
                         }
                     }
-                    self.performSegue(withIdentifier: K.registerSeque, sender: self)
+                    self.performSegue(withIdentifier: K.registerSeque, sender: self) //Kosullar karsilanirsa Calender view'e gecis saglaniyorç
                 }
             }
         }

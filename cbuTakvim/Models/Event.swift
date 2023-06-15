@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Event {
+struct Event { //Firababe Firestore icin kullanilacak Event modeli
     
     let date : String
     let description : String

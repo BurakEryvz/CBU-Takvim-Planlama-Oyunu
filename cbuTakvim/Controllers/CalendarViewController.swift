@@ -28,11 +28,15 @@ class CalendarViewController: UIViewController , FSCalendarDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Geri düğmesini gizler.
         navigationItem.hidesBackButton = true
+        
         title = K.appName
         
-        
+        // Kullanıcıları yükleme işlemini başlatır.
         loadUsers()
+        
+        // TableView için özel hücreyi tanımlayan nib'i ve hücre tanımlayıcısını kaydeder.
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
         
         tableView.dataSource = self
@@ -43,9 +47,11 @@ class CalendarViewController: UIViewController , FSCalendarDelegate{
     
     
     
+    // Bu fonksiyon, Firebase veritabanından kullanıcıları yüklemek için kullanılır.
     func loadUsers(){
         users = []
         
+        // Firestore veritabanındaki "users" koleksiyonunu dinleyerek anlık güncellemeleri alır.
         db.collection(K.FStore.collectionNameUsers).addSnapshotListener { querySnapshot, error in
             self.users = []
             
@@ -55,8 +61,14 @@ class CalendarViewController: UIViewController , FSCalendarDelegate{
                 if let snapshotDocuments = querySnapshot?.documents {
                     for document in snapshotDocuments {
                         let data = document.data()
+                        
+                        // Veritabanından alınan verilerin uygun tiplere dönüştürülmesi.
                         if let firstName = data[K.FStore.firstNameField] as? String , let lastName =  data[K.FStore.lastNameField] as? String, let uID = data[K.FStore.uIDField] as? String{
+                            
+                            // Yeni bir Users nesnesi oluşturulur.
                             let newUser = Users(uID: uID, firstName: firstName, lastName: lastName)
+                            
+                            // Oluşturulan kullanıcı, "users" dizisine eklenir.
                             self.users.append(newUser)
                             
                             
@@ -64,7 +76,7 @@ class CalendarViewController: UIViewController , FSCalendarDelegate{
                     }
                     
                     DispatchQueue.main.async {
-                        self.getUsers()
+                        
                         self.getFirebaseUser()
                     }
                 }
@@ -72,13 +84,7 @@ class CalendarViewController: UIViewController , FSCalendarDelegate{
         }
     }
     
-    func getUsers(){
-        for user in self.users {
-            print("--------------------------------------------------------")
-            print("Name: \(user.firstName)\nSurname: \(user.lastName)\nID: \(user.uID)\n")
-            print("--------------------------------------------------------")
-        }
-    }
+    
     
     
     func getFirebaseUser(){
@@ -103,6 +109,7 @@ class CalendarViewController: UIViewController , FSCalendarDelegate{
     }
     
     
+    // Bu fonksiyon, FSCalendar delegesi tarafından çağrıldığında, bir tarih seçildiğinde gerçekleştirilecek işlemleri belirtir.
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "tr")
@@ -110,16 +117,19 @@ class CalendarViewController: UIViewController , FSCalendarDelegate{
         let stringDate = formatter.string(from: date)
         
         print(stringDate)
+        // eventleriGoster() fonksiyonu çağrılarak, belirtilen tarihteki etkinliklerin gösterilmesi sağlanır.
         eventleriGoster(date: stringDate)
         
     }
     
     
-    
+    // Bu fonksiyon, belirli bir tarihe sahip olan etkinlikleri göstermek için kullanılır.
     func eventleriGoster(date:String) {
         
+        // events dizisini boşaltarak önceki etkinlikleri temizler.
         events = []
         
+        // Firestore veritabanındaki "events" koleksiyonunu dinler ve anlık değişiklikleri algılar.
         db.collection(K.FStore.collectionNameEvents).addSnapshotListener { querySnapshot, error in
             if let e = error {
                 print(e.localizedDescription)
@@ -129,16 +139,21 @@ class CalendarViewController: UIViewController , FSCalendarDelegate{
                     for document in snapshotDocuments {
                         let data = document.data()
                         
+                        // Veritabanından alınan verilerin uygun tiplere dönüştürülmesi.
                         if let tarih = data["date"] as? String , let title = data["title"] as? String ,  let description = data["description"] as? String , let endTime = data["endTime"] as? String , let startTime = data["startTime"] as? String , let user = data["user"] as? String{
                             
+                            
+                            // Belgenin tarihi, istenen tarihe eşitse, yeni bir Event nesnesi oluşturulur.
                             if date == tarih {
                                 let newEvent = Event(date: tarih, description: description, endTime: endTime, startTime: startTime, title: title, user: user)
+                                // Oluşturulan etkinlik, events dizisine eklenir.
                                 self.events.append(newEvent)
+                                // TableView'nin yeniden yüklenmesi, görüntüyü günceller.
                                 self.tableView.reloadData()
                                 
                             }
                             else{
-                                
+                                // Tarih eşleşmiyorsa, yine de TableView'nin yeniden yüklenmesi yapılır.
                                 self.tableView.reloadData()
                                 
                             }
@@ -162,23 +177,26 @@ class CalendarViewController: UIViewController , FSCalendarDelegate{
 
 extension CalendarViewController : UITableViewDataSource {
     
-    
+    //bu fonksiyon events dizisindeki eleman sayisi kadar tabloda satir olusturur.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {// Bu fonksiyon, belirli bir indexPath'e sahip bir UITableViewCell döndürmek için kullanılır.
         
+        // events dizisinden, indexPath.row değerine sahip olan olayı alır.
         let event = events[indexPath.row]
         
+        // K.cellIdentifier olarak tanımlanan bir hücre tanımlayıcısı kullanılır.
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! EventCell
        
+        // Hücredeki etiketlere olayın özelliklerini atar.
         cell.konuLabel.text = event.title
         cell.gonderenLabel.text = "Ekleyen : "+event.user
         cell.aciklamaLabel.text = "Açıklama : "+event.description
         cell.saatLabel.text = event.startTime+" - "+event.endTime
         
-        
+        // Oluşturulan hücreyi döndürür.
         return cell
     }
     
@@ -186,7 +204,7 @@ extension CalendarViewController : UITableViewDataSource {
         return .delete
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {  // Fonksiyon, bir hücrenin silme işlemi gerçekleştirildiğinde ilgili işlemleri yapar.
         tableView.beginUpdates()
         events.remove(at: indexPath.row)
         

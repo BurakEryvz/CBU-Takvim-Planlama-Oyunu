@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+//Projedeki string olarak kullanilan bazi değerlerin tekrarlanmamasi icin olusturulmustur.
 struct K {
     
     static let appName = "CBU Takvim"

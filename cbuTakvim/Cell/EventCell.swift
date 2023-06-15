@@ -10,11 +10,6 @@ import UIKit
 class EventCell: UITableViewCell {
     
     
-    
-    
-    
-    
-    
     @IBOutlet weak var konuLabel: UILabel!
     
     
@@ -31,6 +26,8 @@ class EventCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        //Event hücresinin kenarlarinin yumusatilmasi icin yapilmistir.
         eventBubble.layer.cornerRadius = eventBubble.frame.height / 7
         
         

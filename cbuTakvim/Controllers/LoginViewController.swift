@@ -19,8 +19,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        emailTxtField.text = "yigit@tore.com"
-        sifreTxtField.text = "123456"
+        
         
     }
     

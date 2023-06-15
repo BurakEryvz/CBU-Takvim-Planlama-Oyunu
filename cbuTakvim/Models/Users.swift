@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Users {
+struct Users {  // Firebase Auth icin kullanilacak users modeli
     
     let uID:String
     let firstName:String
