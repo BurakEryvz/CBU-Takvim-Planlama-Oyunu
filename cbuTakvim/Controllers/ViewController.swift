@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cbuTakvimLabel.text = "CBU Takvim"
+        cbuTakvimLabel.text = K.appName
     }
 
 

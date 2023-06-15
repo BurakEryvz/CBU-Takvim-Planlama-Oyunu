@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct Event {
+    
+    let date : String
+    let description : String
+    let endTime : String
+    let startTime : String
+    let title : String
+    let user : String
+    
+    
+}

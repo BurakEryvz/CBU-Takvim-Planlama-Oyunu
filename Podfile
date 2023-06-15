@@ -10,5 +10,7 @@ target 'cbuTakvim' do
 	pod 'FirebaseAuth'
 	pod 'FirebaseFirestore'	
 	pod 'CLTypingLabel'
+	pod 'IQKeyboardManagerSwift'
+	pod 'FSCalendar'
 
 end

@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4181818A6B888E6ADBDAFA8E /* Pods_cbuTakvim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA91DB49DCA5EB1BBB777159 /* Pods_cbuTakvim.framework */; };
+		951D8D912A1CCAB000894691 /* addingEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D8D902A1CCAB000894691 /* addingEventViewController.swift */; };
+		9575DA892A191DD300507F11 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9575DA882A191DD300507F11 /* Event.swift */; };
+		9575DA8C2A191F9E00507F11 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9575DA8A2A191F9E00507F11 /* EventCell.swift */; };
+		9575DA8D2A191F9E00507F11 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9575DA8B2A191F9E00507F11 /* EventCell.xib */; };
 		95925B2B2A13BAE100B2A065 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95925B2A2A13BAE100B2A065 /* Users.swift */; };
+		95949EAD2A14F39F00E81910 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95949EAC2A14F39F00E81910 /* Constants.swift */; };
 		95B5B4A32A12543B00277887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B5B4A22A12543B00277887 /* AppDelegate.swift */; };
 		95B5B4A52A12543B00277887 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B5B4A42A12543B00277887 /* SceneDelegate.swift */; };
 		95B5B4A72A12543B00277887 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B5B4A62A12543B00277887 /* ViewController.swift */; };
@@ -22,7 +27,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		951D8D902A1CCAB000894691 /* addingEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addingEventViewController.swift; sourceTree = "<group>"; };
+		9575DA882A191DD300507F11 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		9575DA8A2A191F9E00507F11 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		9575DA8B2A191F9E00507F11 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		95925B2A2A13BAE100B2A065 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		95949EAC2A14F39F00E81910 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		95B5B49F2A12543B00277887 /* cbuTakvim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cbuTakvim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B5B4A22A12543B00277887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95B5B4A42A12543B00277887 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,10 +71,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9575DA872A191CBB00507F11 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9575DA8A2A191F9E00507F11 /* EventCell.swift */,
+				9575DA8B2A191F9E00507F11 /* EventCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		95925B292A13BAD100B2A065 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				95925B2A2A13BAE100B2A065 /* Users.swift */,
+				9575DA882A191DD300507F11 /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -90,10 +110,12 @@
 		95B5B4A12A12543B00277887 /* cbuTakvim */ = {
 			isa = PBXGroup;
 			children = (
+				9575DA872A191CBB00507F11 /* Cell */,
 				95925B292A13BAD100B2A065 /* Models */,
 				95B5B4BE2A125DFA00277887 /* Delegates */,
 				95B5B4BA2A125B2400277887 /* Controllers */,
 				95B5B4BD2A125DED00277887 /* Views */,
+				95949EAC2A14F39F00E81910 /* Constants.swift */,
 				95B5B4AB2A12543C00277887 /* Assets.xcassets */,
 				95B5B4B02A12543C00277887 /* Info.plist */,
 				95B5B4BF2A125EFA00277887 /* GoogleService-Info.plist */,
@@ -108,6 +130,7 @@
 				95B5B4B62A125AF400277887 /* RegisterViewController.swift */,
 				95B5B4B82A125B1100277887 /* LoginViewController.swift */,
 				95B5B4BB2A125B6400277887 /* CalendarViewController.swift */,
+				951D8D902A1CCAB000894691 /* addingEventViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -201,6 +224,7 @@
 				95B5B4AF2A12543C00277887 /* LaunchScreen.storyboard in Resources */,
 				95B5B4C02A125EFA00277887 /* GoogleService-Info.plist in Resources */,
 				95B5B4AC2A12543C00277887 /* Assets.xcassets in Resources */,
+				9575DA8D2A191F9E00507F11 /* EventCell.xib in Resources */,
 				95B5B4AA2A12543B00277887 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +282,13 @@
 				95B5B4A72A12543B00277887 /* ViewController.swift in Sources */,
 				95925B2B2A13BAE100B2A065 /* Users.swift in Sources */,
 				95B5B4A32A12543B00277887 /* AppDelegate.swift in Sources */,
+				9575DA892A191DD300507F11 /* Event.swift in Sources */,
 				95B5B4A52A12543B00277887 /* SceneDelegate.swift in Sources */,
+				9575DA8C2A191F9E00507F11 /* EventCell.swift in Sources */,
+				951D8D912A1CCAB000894691 /* addingEventViewController.swift in Sources */,
 				95B5B4B92A125B1100277887 /* LoginViewController.swift in Sources */,
 				95B5B4B72A125AF400277887 /* RegisterViewController.swift in Sources */,
+				95949EAD2A14F39F00E81910 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +445,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,7 +476,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
